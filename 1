@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string s1, s2;
+
+    cout << "Введіть перший рядок: ";
+    getline(cin, s1);
+
+    cout << "Введіть другий рядок: ";
+    getline(cin, s2);
+
+    string result;
+    result.reserve(s1.size());
+
+    for (char ch : s1) {
+        if (s2.find(ch) == string::npos) {
+            result += ch;
+        }
+    }
+
+    cout << "Результат: " << result << endl;
+
+    return 0;
+}
